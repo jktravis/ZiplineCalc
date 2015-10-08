@@ -1,5 +1,33 @@
 #calc {
-  background: #aaaaaa;
+  background: #d5d5d5;
   border: 1px solid #616161;
+  border-radius: 5px;
+  padding-bottom: 1em;
+}
+
+button {
+  width: 90%;
+  font-size: 2em;
+  border-radius: 10px;
+  color: white;
+  background: #464646;
+}
+
+.output {
+  font-family: 'VT323', monospace;
+  font-size: 3em;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93b787+0,a1c995+48,93b787+100 */
+  background: #93b787; /* Old browsers */
+  background: -moz-linear-gradient(left,  #93b787 0%, #a1c995 48%, #93b787 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#93b787), color-stop(48%,#a1c995), color-stop(100%,#93b787)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #93b787 0%,#a1c995 48%,#93b787 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #93b787 0%,#a1c995 48%,#93b787 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #93b787 0%,#a1c995 48%,#93b787 100%); /* IE10+ */
+  background: linear-gradient(to right,  #93b787 0%,#a1c995 48%,#93b787 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93b787', endColorstr='#93b787',GradientType=1 ); /* IE6-9 */
+  margin: 0 .3em .3em .3em;
+  width: 95%;
+  padding: 0 .5em;
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
