@@ -1,12 +1,38 @@
 (function(){
    $(document).ready(function()
    {
+      var $display = $('.output').first();
       var total = 0;
-      var display = total;
+      var display;
 
-      $('button').on('click', function(e)
+      upDateDisplay(total);
+
+      $('button').on('click', function()
       {
-         console.log($(this).val());
-      })
+         var currentButton = $(this).val();
+         if (!isNaN(parseInt(currentButton)))
+         {
+            //store value for math operation
+            if (display)
+            {
+               display += '' + currentButton;
+            }
+            else
+            {
+               display = currentButton;
+            }
+            upDateDisplay(display);
+         }
+         else
+         {
+            // store operation to perform function
+            console.log('operation');
+         }
+      });
+
+      function upDateDisplay(val)
+      {
+         $display.val(val);
+      }
    });
 })();
