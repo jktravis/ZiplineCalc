@@ -13,6 +13,10 @@ button {
   background: #464646;
 }
 
+button:hover {
+  background: #2f2f2f;
+}
+
 .output {
   font-family: 'VT323', monospace;
   font-size: 3em;
@@ -30,4 +34,5 @@ button {
   padding: 0 .5em;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: #575757;
 }
