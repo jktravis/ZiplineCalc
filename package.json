@@ -1,0 +1,25 @@
+{
+  "name": "zipine-calc",
+  "version": "1.0.0",
+  "description": "FCC Zipline Calculator",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "FCC",
+    "Free",
+    "Code",
+    "Camp",
+    "Zipline"
+  ],
+  "author": "joshua.travis@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}
