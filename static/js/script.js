@@ -6,14 +6,14 @@
        dataType: "script",
        success: function (data, status, jqxhr)
        {
-         console.log(exports.calculator.add(1, 2));
+         var calc = exports.calculator;
          var $display = $('.output').first();
-         var total = 0;
-         var calcVal = '';
-         var display = 0;
+         calc.total = 0;
+         calc.input = '';
+         calc.display = 0;
          var op = false;
 
-         updateDisplay(total);
+         updateDisplay(calc.total);
 
       $('button').on('click', function()
       {
@@ -22,16 +22,16 @@
         if (!isNaN(parseInt(currentButton)) || currentButton === '.')
          {
             //store value for math operation
-            if (display)
-            {
-               display += '' + currentButton;
+            if (calc.display)
+           {
+               calc.display += '' + currentButton;
             }
             else
             {
-               display = currentButton;
+               calc.display = currentButton;
             }
-           calcVal = display;
-           updateDisplay(display);
+           calc.input = calc.display;
+           updateDisplay(calc.display);
          }
          else
          {
@@ -70,15 +70,15 @@
 
          function clearCurrent()
          {
-           display = 0;
-           updateDisplay(display);
+           calc.display = 0;
+           updateDisplay(calc.display);
          }
 
          function allClear()
          {
-           display = 0;
-           total = 0;
-           updateDisplay(display);
+           calc.display = 0;
+           calc.total = 0;
+           updateDisplay(calc.display);
          }
 
          function updateDisplay(val)
