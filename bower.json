@@ -1,0 +1,30 @@
+{
+  "name": "zipine-calc",
+  "description": "FCC Zipline Calculator",
+  "main": "index.html",
+  "authors": [
+    "joshua.travis@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "FCC",
+    "Free",
+    "Code",
+    "Camp",
+    "Zipline"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
