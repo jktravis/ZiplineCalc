@@ -1,6 +1,7 @@
 exports.calculator = {
   display: 0,
   input: '',
+  total: 0,
 
   add: function(a, b) {
     return a + b;
