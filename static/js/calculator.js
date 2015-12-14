@@ -22,23 +22,19 @@ exports.calculator = {
   },
 
   clearEntry: function () {
-    this.display = '' + 0;
+    this.display = 0;
     this.input = this.input.replace(/[^+\-*/]\d?CE$/g, '');
   },
 
   allClear: function () {
-    this.display = '' + 0;
+    this.display = 0;
     this.total = 0;
     this.input = '';
   },
 
   activateOperation: function() {
-    var ops = ['+', '-', '*', '/'];
-    if (ops.indexOf(this.lastOperation) >= 0)
-    {
-      this.total = eval(this.input);
-      this.display = '' + this.total;
-      this.input = '' + this.total;
-    }
-  },
+    this.total = eval(this.input);
+    this.display = '' + this.total;
+    this.input = '' + this.total;
+  }
 };

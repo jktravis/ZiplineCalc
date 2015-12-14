@@ -35,54 +35,44 @@
           }
           else
           {
-            // Check if an operation has already been provided.
-            // This is used to determine if the calculation needs
-            // to occur now, and the display updated.
-            if (calc.operatorProvided === true) {
-              calc.activateOperation();
-              updateDisplay(calc.display);
+            // Check if the input is able to be evaluated.
+            var operators = ['+', '-', '*', '/'];
+            if (operators.indexOf(currentButton) >= 0)
+            {
+              var inputMatch = calc.input.match(/^[\d\.]+[+\-*/][\d\.]+$/);
+              if (inputMatch)
+              { // todo rename to evaluateOperation
+                calc.activateOperation();
+                updateDisplay(calc.display);
+                calc.input += currentButton;
+              }
+              else if (calc.input.match(/[+\-*/]/))
+              {
+                calc.input = calc.input.replace(/[+\-*/]/, currentButton);
+              }
+              else
+              {
+                calc.input += currentButton;
+              }
             }
             else {
-              calc.operatorProvided = true;
-            }
-            calc.input += currentButton;
-            // store operation to perform function
-            switch (currentButton)
-            {
-              case 'AC':
-                calc.allClear();
-                updateDisplay(calc.display);
-                break;
-              case 'CE':
-                calc.clearEntry();
-                updateDisplay(calc.display);
-                break;
-              case '/':
-                calc.lastOperation = '/';
-                console.log('Dividing');
-                break;
-              case '*':
-                calc.lastOperation = '*';
-                console.log('Multiplying');
-                break;
-              case '%':
-                console.log('Percenting');
-                break;
-              case '+':
-                calc.lastOperation = '+';
-                console.log('Adding');
-                break;
-              case '-':
-                calc.lastOperation = '-';
-                console.log('Subtracting');
-                break;
-              case '=':
-                calc.lastOperation = '=';
-                console.log('Equals');
-                updateDisplay(calc.display);
-                break;
-              default:
-                break;
+              switch (currentButton)
+              {
+                case 'AC':
+                  calc.allClear();
+                  updateDisplay(calc.display);
+                  break;
+                case 'CE':
+                  calc.clearEntry();
+                  updateDisplay(calc.display);
+                  break;
+                case '=':
+                  calc.activateOperation();
+                  updateDisplay(calc.display);
+                  break;
+                default:
+                  break;
+              }
             }
           }
         });
