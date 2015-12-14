@@ -18,9 +18,9 @@
           // if the button is a number or a period
           if (!isNaN(parseInt(currentButton)) || currentButton === '.')
           {
-            //store value for math operation
+            // Store value for math operation.
             if (calc.display)
-            {
+            { // Ensure display is initially stored as a string.
               calc.display += '' + currentButton;
             }
             else
@@ -32,6 +32,16 @@
           }
           else
           {
+            // Check if an operation has already been provided.
+            // This is used to determine if the calculation needs
+            // to occur now, and the display updated.
+            if (calc.operatorProvided === true) {
+              calc.activateOperation();
+              updateDisplay(calc.display);
+            }
+            else {
+              calc.operatorProvided = true;
+            }
             calc.input += currentButton;
             // store operation to perform function
             switch (currentButton)
@@ -45,22 +55,28 @@
                 updateDisplay(calc.display);
                 break;
               case '/':
+                calc.lastOperation = '/';
                 console.log('Dividing');
                 break;
               case '*':
+                calc.lastOperation = '*';
                 console.log('Multiplying');
                 break;
               case '%':
                 console.log('Percenting');
                 break;
               case '+':
+                calc.lastOperation = '+';
                 console.log('Adding');
                 break;
               case '-':
+                calc.lastOperation = '-';
                 console.log('Subtracting');
                 break;
               case '=':
+                calc.lastOperation = '=';
                 console.log('Equals');
+                updateDisplay(calc.display);
                 break;
               default:
                 break;

@@ -2,9 +2,11 @@ exports.calculator = {
   display: 0,
   input: '',
   total: 0,
+  operatorProvided: false,
+  lastOperation: '',
 
   add: function(a, b) {
-    return a + b;
+    return Number(a) + Number(b);
   },
 
   subtract: function(a, b) {
@@ -28,5 +30,19 @@ exports.calculator = {
     this.display = 0;
     this.total = 0;
     this.input = '';
+  },
+
+  activateOperation: function() {
+    var ops = ['+', '-', '*', '/'];
+    if (ops.indexOf(this.lastOperation) >= 0)
+    {
+      this.total = eval(this.input);
+      this.updateTotal();
+    }
+  },
+
+  updateTotal: function() {
+    this.display = '' + this.total;
+    this.input = '' + this.total;
   }
 };
