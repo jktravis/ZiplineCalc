@@ -62,35 +62,35 @@ describe("calculator", function(){
     calc.input = '1+2+3+4';
     calc.allClear();
     expect(calc.total).to.equal(0);
-    expect(calc.display).to.equal('0');
+    expect(calc.display).to.equal(0);
     expect(calc.input).to.equal('');
   });
 
   it('should return 3 when evaluating 1+2', function () {
     calc.input = '1+2';
     calc.lastOperation = '+';
-    calc.activateOperation();
+    calc.evaluateOperation();
     expect(calc.total).to.equal(3);
   });
 
   it('should return 76 when evaluating 145-69', function () {
     calc.input = '145-69';
     calc.lastOperation = '-';
-    calc.activateOperation();
+    calc.evaluateOperation();
     expect(calc.total).to.equal(76);
   });
 
   it('should return 40 when evaluating 10*4', function () {
     calc.input = '10*4';
     calc.lastOperation = '*';
-    calc.activateOperation();
+    calc.evaluateOperation();
     expect(calc.total).to.equal(40);
   });
 
   it('should return 3 when evaluating 21/7', function () {
     calc.input = '21/7';
     calc.lastOperation = '+';
-    calc.activateOperation();
+    calc.evaluateOperation();
     expect(calc.total).to.equal(3);
   });
 });

@@ -32,7 +32,7 @@ exports.calculator = {
     this.input = '';
   },
 
-  activateOperation: function() {
+  evaluateOperation: function() {
     this.total = eval(this.input);
     this.display = '' + this.total;
     this.input = '' + this.total;
