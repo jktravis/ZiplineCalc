@@ -48,7 +48,7 @@
             {
               var inputMatch = calc.input.match(/^[\d\.]+[+\-*/][\d\.]+$/);
               if (inputMatch)
-              { // todo rename to evaluateOperation
+              {
                 calc.evaluateOperation();
                 updateDisplay(calc.display);
                 calc.input += currentButton;
