@@ -20,11 +20,14 @@
           {
             // Store value for math operation.
             if (calc.display)
-            { // Ensure display is initially stored as a string.
-              calc.display += '' + currentButton;
+            { // Ensure display is stored as a string.
+              if (!(currentButton === '.' && calc.display.match(/\./)))
+              {
+                calc.display += '' + currentButton;
+              }
             }
             else
-            {
+            {// Do initial assignment. Append from here on out.
               calc.display = currentButton;
             }
             calc.input += currentButton;
