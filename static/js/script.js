@@ -23,7 +23,14 @@
             { // Ensure display is stored as a string.
               if (!(currentButton === '.' && calc.display.match(/\./)))
               {
-                calc.display += '' + currentButton;
+                if (calc.input.match(/[*+\-/]$/))
+                {
+                  calc.display = '' + currentButton;
+                }
+                else
+                {
+                  calc.display += '' + currentButton;
+                }
               }
             }
             else
