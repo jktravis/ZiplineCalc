@@ -37,12 +37,8 @@ exports.calculator = {
     if (ops.indexOf(this.lastOperation) >= 0)
     {
       this.total = eval(this.input);
-      this.updateTotal();
+      this.display = '' + this.total;
+      this.input = '' + this.total;
     }
   },
-
-  updateTotal: function() {
-    this.display = '' + this.total;
-    this.input = '' + this.total;
-  }
 };
