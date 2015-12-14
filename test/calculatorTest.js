@@ -3,6 +3,10 @@ var expect = chai.expect;
 var calc = require('../static/js/calculator.js').calculator;
 
 describe("calculator", function(){
+  before(function () {
+    calc.input = '1+2-3CE';
+  });
+
   it('should be an object', function() {
     expect(calc).to.be.an('Object');
   });
@@ -46,4 +50,9 @@ describe("calculator", function(){
   it('should return 5 when 10 is divided by 2', function() {
     expect(calc.divide(10, 2)).to.equal(5);
   });
+
+  it('should return 1+2- when provided 1+2-3', function() {
+    calc.clearEntry();
+    expect(calc.input).to.equal('1+2-');
+  })
 });

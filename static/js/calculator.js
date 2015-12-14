@@ -17,5 +17,10 @@ exports.calculator = {
 
   divide: function(a, b) {
     return a / b;
+  },
+
+  clearEntry: function () {
+    this.display = 0;
+    this.input = this.input.replace(/[^+\-*/]\d?CE$/g, '');
   }
 };

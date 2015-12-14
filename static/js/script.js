@@ -9,8 +9,6 @@
       {
         var calc = exports.calculator;
         var $display = $('.output').first();
-        calc.total = 0;
-        calc.display = 0;
 
         updateDisplay(calc.total);
 
@@ -29,10 +27,12 @@
             {
               calc.display = currentButton;
             }
+            calc.input += currentButton;
             updateDisplay(calc.display);
           }
           else
           {
+            calc.input += currentButton;
             // store operation to perform function
             switch (currentButton)
             {
@@ -40,7 +40,8 @@
                 allClear();
                 break;
               case 'CE':
-                clearCurrent();
+                calc.clearEntry();
+                updateDisplay(calc.display);
                 break;
               case '/':
                 console.log('Dividing');
@@ -66,16 +67,11 @@
           }
         });
 
-        function clearCurrent()
-        {
-          calc.display = 0;
-          updateDisplay(calc.display);
-        }
-
         function allClear()
         {
           calc.display = 0;
           calc.total = 0;
+          calc.input = '';
           updateDisplay(calc.display);
         }
 
