@@ -22,5 +22,11 @@ exports.calculator = {
   clearEntry: function () {
     this.display = 0;
     this.input = this.input.replace(/[^+\-*/]\d?CE$/g, '');
+  },
+
+  allClear: function () {
+    this.display = 0;
+    this.total = 0;
+    this.input = '';
   }
 };

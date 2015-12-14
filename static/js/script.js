@@ -37,7 +37,8 @@
             switch (currentButton)
             {
               case 'AC':
-                allClear();
+                calc.allClear();
+                updateDisplay(calc.display);
                 break;
               case 'CE':
                 calc.clearEntry();
@@ -66,14 +67,6 @@
             }
           }
         });
-
-        function allClear()
-        {
-          calc.display = 0;
-          calc.total = 0;
-          calc.input = '';
-          updateDisplay(calc.display);
-        }
 
         function updateDisplay(val)
         {
