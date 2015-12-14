@@ -56,6 +56,16 @@ describe("calculator", function(){
     expect(calc.input).to.equal('1+2-');
   });
 
+  it('should clear display, total, and input values', function() {
+    calc.display = '2342';
+    calc.total = '23423';
+    calc.input = '1+2+3+4';
+    calc.allClear();
+    expect(calc.total).to.equal(0);
+    expect(calc.display).to.equal('0');
+    expect(calc.input).to.equal('');
+  });
+
   it('should return 3 when evaluating 1+2', function () {
     calc.input = '1+2';
     calc.lastOperation = '+';
