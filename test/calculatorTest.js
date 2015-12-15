@@ -4,7 +4,7 @@ var calc = require('../static/js/calculator.js').calculator;
 
 describe("calculator", function(){
   before(function () {
-    calc.input = '1+2-3CE';
+    calc.input = '1+2-3';
   });
 
   it('should be an object', function() {

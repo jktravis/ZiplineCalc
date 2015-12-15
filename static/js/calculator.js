@@ -7,7 +7,7 @@ exports.calculator = {
 
   clearEntry: function () {
     this.display = 0;
-    this.input = this.input.replace(/[^+\-*/]\d?CE$/g, '');
+    this.input = this.input.replace(/[^+\-*/][\d\.]*$/, '');
   },
 
   allClear: function () {
