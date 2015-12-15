@@ -36,3 +36,15 @@ button:hover {
   border-radius: 5px;
   color: #575757;
 }
+
+.solar-panel-bg {
+  background: rgba(100, 58, 48, .8);
+  height: 40px;
+  width: 45%;
+  border-radius: 5px;
+}
+
+.solar-panel-bg .solar-panel {
+  border: 1px solid rgba(115, 75, 59, 1);
+  height: 40px;
+}
